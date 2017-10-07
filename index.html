@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="newsApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Altarix test</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body ng-controller="NewsListCtrl">
+	
+	<ul>
+		<li ng-repeat="newsItem in newsList">
+			<h3>{{newsItem.headline.main}}</h3>
+			<p>{{newsItem.snippet}}</p>
+			<span>{{newsItem.pub_date}}</span>
+		</li>
+	</ul>
+
+
+</body>
+</html>
