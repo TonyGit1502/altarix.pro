@@ -30,18 +30,17 @@
 	<section>
 		<div id="news" ng-controller="NewsListCtrl">
 			<div ng-repeat="newsItem in newsList" class="newsItem">
-				<h2>{{newsItem.headline.main}}</h2>
-				<p>{{newsItem.snippet}}</p>
-				<span>{{newsItem.pub_date | date}}</span>
-				<button onclick="saveData(this)" class="newsLike" data-news-index="{{$index+1}}"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+				<h2 ng-bind="newsItem.headline.main"></h2>
+				<p ng-bind="newsItem.snippet"></p>
+				<span ng-bind="newsItem.pub_date | date"></span>
+				<button ng-click="saveData(this)" class="newsLike"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
 			</div>
 		</div>
 		<div id="saveNews" ng-controller="OutputDataCtrl">
 			<div class="saveNewsItem" ng-repeat="data in returnData">
-				<h2>{{data.title}}</h2>
-				<p>{{data.news}}</p>
-				<span>{{data.date}}</span>
-				<button onclick="deleteData(this)" class="newsDelete" data-news-index="{{$index+1}}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+				<h2 ng-bind="data.title"></h2>
+				<p ng-bind="data.news"></p>
+				<span ng-bind="data.date"></span>
 			</div>
 		</div>
 	</section>

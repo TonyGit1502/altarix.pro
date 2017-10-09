@@ -1,6 +1,8 @@
 'use strict';
 
 var newsApp = angular.module('newsApp', []);
+var index = 0;
+const mask = "lsNews_";
 
 newsApp.controller('NewsListCtrl', function($scope, $http){
 	$scope.newsList = [];
@@ -14,6 +16,18 @@ newsApp.controller('NewsListCtrl', function($scope, $http){
     }, function myError(response) {
         $scope.newsList = response.statusText;
     });
+    $scope.saveData = function(e){
+		var newsBlock = document.getElementsByClassName("newsItem");
+		var obj = {
+			date: e.$$watchers[0].last,
+			news: e.$$watchers[1].last,
+			title: e.$$watchers[2].last 
+		};
+		var serialNews = JSON.stringify(obj);
+		localStorage.setItem(mask+index, serialNews);
+		index++;
+		// console.log("hey");	
+    };
 });
 
 newsApp.controller('WeatherCtrl', function($scope, $http){
@@ -30,39 +44,14 @@ newsApp.controller('WeatherCtrl', function($scope, $http){
 	});
 });
 
-///////////////////////////////////////////////////////////////////
-var mask = "lsNews_";
-var index = 0;
-function saveData(e){
-	var newsBlock = document.getElementsByClassName("newsItem");
-	var newsItem = e.parentNode;
-	var obj = {
-		title: newsItem.children[0].textContent,
-		news: newsItem.children[1].textContent,
-		date: newsItem.children[2].textContent 
-	};
-	var serialNews = JSON.stringify(obj);
-	localStorage.setItem(mask+index, serialNews);
-	index++;	
-	return 0;
-}
-function deleteData(e){
-	localStorage.removeItem(mask+e.getAttribute('data-news-index'));
-	console.log("delete complete");
-}
-
 newsApp.controller("OutputDataCtrl", function($scope){
-	var lsData;
 	$scope.returnData = [];
 	if(localStorage.length == 0){
 		alert("localStorage is empty");
 	}
 	else{
 		for(var i=0; i<localStorage.length; i++){
-			lsData = localStorage.getItem(mask+i);
-			$scope.returnData[i] = JSON.parse(lsData);
-			// console.log($scope.returnData[i]);
-			// // var outputData = document.getElementsByClassName()
+			$scope.returnData[i] = JSON.parse(localStorage.getItem(mask+i));
 		}
 	}
 });
