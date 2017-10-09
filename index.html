@@ -4,19 +4,47 @@
 	<meta charset="UTF-8">
 	<title>Altarix test</title>
 	<script src="js/angular.min.js"></script>
-	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-controller="NewsListCtrl">
-	
-	<ul>
-		<li ng-repeat="newsItem in newsList">
-			<h3>{{newsItem.headline.main}}</h3>
-			<p>{{newsItem.snippet}}</p>
-			<span>{{newsItem.pub_date}}</span>
-		</li>
-	</ul>
-
+<body>
+	<header ng-controller="WeatherCtrl">
+		<div class="container">
+			<div class="page-title">
+				<h2>JavaScript project</h2>
+			</div>		
+			<div class="weather">
+				<ul>
+					<li><span>{{weather.name}}</span></li>
+					<li>Погода: {{weather.weather[0].main}}</li>
+					<li>Температура: {{weather.main.temp}}&deg;С</li>
+					<li>Скорость ветра: {{weather.wind.speed}} м/с</li>
+					<li>Давление: {{weather.main.pressure}}</li>
+					<li>Влажность: {{weather.main.humidity}}%</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div id="news" ng-controller="NewsListCtrl">
+			<div ng-repeat="newsItem in newsList" class="newsItem">
+				<h2>{{newsItem.headline.main}}</h2>
+				<p>{{newsItem.snippet}}</p>
+				<span>{{newsItem.pub_date | date}}</span>
+				<button onclick="saveData(this)" class="newsLike" data-news-index="{{$index+1}}"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+			</div>
+		</div>
+		<div id="saveNews" ng-controller="OutputDataCtrl">
+			<div class="saveNewsItem" ng-repeat="data in returnData">
+				<h2>{{data.title}}</h2>
+				<p>{{data.news}}</p>
+				<span>{{data.date}}</span>
+				<button onclick="deleteData(this)" class="newsDelete" data-news-index="{{$index+1}}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			</div>
+		</div>
+	</section>
 
 </body>
 </html>

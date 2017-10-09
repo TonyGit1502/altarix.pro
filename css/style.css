@@ -1,0 +1,119 @@
+body {
+  overflow-x: hidden;
+}
+section {
+  display: inline-flex;
+  flex-direction: row;
+}
+header {
+  background-color: #01579b;
+  color: #ffffff;
+  height: 80px;
+  width: 100vw;
+}
+header .container {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+header .weather {
+  display: flex;
+  padding-top: 15px;
+}
+header .weather ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+}
+header .weather ul li {
+  font-size: 18px;
+  margin: auto 5px;
+}
+header .weather ul li span {
+  color: #fc6744;
+}
+#news {
+  width: 50%;
+  background-color: #00a65a;
+}
+#news .newsItem {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+#news .newsItem h2 {
+  text-align: center;
+  font-style: italic;
+}
+#news .newsItem span {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+  font-style: italic;
+}
+#news .newsItem .newsLike {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+#news .newsItem .newsLike i.fa {
+  color: #6e6e6e;
+  font-size: 20px;
+}
+#news .newsItem .newsLike:hover,
+#news .newsItem .newsLike:focus,
+#news .newsItem .newsLike:visited {
+  outline: none;
+}
+#saveNews {
+  width: 50%;
+  background-color: #f39c12;
+}
+#saveNews .saveNewsItem {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+#saveNews .saveNewsItem h2 {
+  text-align: center;
+  font-style: italic;
+}
+#saveNews .saveNewsItem span {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+  font-style: italic;
+}
+#saveNews .saveNewsItem .newsDelete {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+#saveNews .saveNewsItem .newsDelete i.fa {
+  color: #6e6e6e;
+  font-size: 20px;
+}
+#saveNews .saveNewsItem .newsDelete:hover,
+#saveNews .saveNewsItem .newsDelete:focus,
+#saveNews .saveNewsItem .newsDelete:visited {
+  outline: none;
+}
