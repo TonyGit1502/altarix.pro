@@ -1,7 +1,6 @@
 'use strict';
 
 var newsApp = angular.module('newsApp', []);
-var index = 0;
 const mask = "lsNews_";
 
 newsApp.controller('NewsListCtrl', function($scope, $http){
@@ -17,7 +16,7 @@ newsApp.controller('NewsListCtrl', function($scope, $http){
         $scope.newsList = response.statusText;
     });
     $scope.saveData = function(e){
-		var newsBlock = document.getElementsByClassName("newsItem");
+    	var index = localStorage.length;
 		var obj = {
 			date: e.$$watchers[0].last,
 			news: e.$$watchers[1].last,
@@ -25,8 +24,7 @@ newsApp.controller('NewsListCtrl', function($scope, $http){
 		};
 		var serialNews = JSON.stringify(obj);
 		localStorage.setItem(mask+index, serialNews);
-		index++;
-		// console.log("hey");	
+		index++;	
     };
 });
 
@@ -46,12 +44,7 @@ newsApp.controller('WeatherCtrl', function($scope, $http){
 
 newsApp.controller("OutputDataCtrl", function($scope){
 	$scope.returnData = [];
-	if(localStorage.length == 0){
-		alert("localStorage is empty");
-	}
-	else{
-		for(var i=0; i<localStorage.length; i++){
-			$scope.returnData[i] = JSON.parse(localStorage.getItem(mask+i));
-		}
+	for(var i=0; i<localStorage.length; i++){
+		$scope.returnData[i] = JSON.parse(localStorage.getItem(mask+i));
 	}
 });
