@@ -35,17 +35,19 @@ header .weather ul li {
 header .weather ul li span {
   color: #fc6744;
 }
-#search {
+#main {
+  display: flex;
   justify-content: center;
+  flex-direction: column;
   background-color: #fc6744;
 }
-#search .searchNews {
+#main .searchNews {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin: 1% 1% 1% 0;
+  margin: 20px auto;
 }
-#search .searchNews input {
+#main .searchNews input {
   width: 25%;
   height: 40px;
   padding: 10px;
@@ -56,11 +58,11 @@ header .weather ul li span {
   border-color: #252831;
   color: #252831;
 }
-#search .searchNews input:focus,
-#search .searchNews input:visited {
+#main .searchNews input:focus,
+#main .searchNews input:visited {
   outline: none;
 }
-#search .searchNews button {
+#main .searchNews button {
   border: none;
   background-color: #252831;
   -webkit-border-radius: 20px;
@@ -75,21 +77,24 @@ header .weather ul li span {
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
-#search .searchNews button:hover {
+#main .searchNews button:hover {
   background-color: #ffffff;
   color: #252831;
 }
-#search .searchNews button:focus,
-#search .searchNews button:visited {
+#main .searchNews button:focus,
+#main .searchNews button:visited {
   outline: none;
 }
-#news {
-  width: 50%;
-  background-color: #00a65a;
-}
-#news .newsItem {
+#main .content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+#main .content .news {
+  width: 50%;
+  justify-content: flex-start;
+}
+#main .content .news .newsItem {
+  flex-direction: row;
   margin: 20px;
   padding: 10px 20px;
   background-color: #f5f5f5;
@@ -99,38 +104,42 @@ header .weather ul li span {
   -o-border-radius: 20px;
   border-radius: 20px;
 }
-#news .newsItem h2 {
+#main .content .news .newsItem h2 {
   text-align: center;
   font-style: italic;
 }
-#news .newsItem span {
+#main .content .news .newsItem .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#main .content .news .newsItem .info span {
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
   font-style: italic;
 }
-#news .newsItem .newsLike {
+#main .content .news .newsItem .info .newsLike {
   border: none;
   background-color: transparent;
   display: flex;
   justify-content: flex-end;
 }
-#news .newsItem .newsLike i.fa {
+#main .content .news .newsItem .info .newsLike i.fa {
   color: #6e6e6e;
   font-size: 20px;
 }
-#news .newsItem .newsLike:hover,
-#news .newsItem .newsLike:focus,
-#news .newsItem .newsLike:visited {
+#main .content .news .newsItem .info .newsLike:hover,
+#main .content .news .newsItem .info .newsLike:focus,
+#main .content .news .newsItem .info .newsLike:visited {
   outline: none;
 }
-#saveNews {
+#main .content .saveNews {
   width: 50%;
-  background-color: #f39c12;
+  justify-content: flex-end;
 }
-#saveNews .saveNewsItem {
-  display: flex;
-  flex-direction: column;
+#main .content .saveNews .saveNewsItem {
+  flex-direction: row;
   margin: 20px;
   padding: 10px 20px;
   background-color: #f5f5f5;
@@ -140,28 +149,28 @@ header .weather ul li span {
   -o-border-radius: 20px;
   border-radius: 20px;
 }
-#saveNews .saveNewsItem h2 {
+#main .content .saveNews .saveNewsItem h2 {
   text-align: center;
   font-style: italic;
 }
-#saveNews .saveNewsItem span {
+#main .content .saveNews .saveNewsItem span {
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
   font-style: italic;
 }
-#saveNews .saveNewsItem .newsDelete {
+#main .content .saveNews .saveNewsItem .newsDelete {
   border: none;
   background-color: transparent;
   display: flex;
   justify-content: flex-end;
 }
-#saveNews .saveNewsItem .newsDelete i.fa {
+#main .content .saveNews .saveNewsItem .newsDelete i.fa {
   color: #6e6e6e;
   font-size: 20px;
 }
-#saveNews .saveNewsItem .newsDelete:hover,
-#saveNews .saveNewsItem .newsDelete:focus,
-#saveNews .saveNewsItem .newsDelete:visited {
+#main .content .saveNews .saveNewsItem .newsDelete:hover,
+#main .content .saveNews .saveNewsItem .newsDelete:focus,
+#main .content .saveNews .saveNewsItem .newsDelete:visited {
   outline: none;
 }
