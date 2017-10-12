@@ -27,6 +27,12 @@
 			</div>
 		</div>
 	</header>
+	<section id="search">
+		<div class="searchNews" ng-controller="NewsListCtrl">
+			<input type="text" id="query" placeholder="Search...">
+			<button ng-click="searchData()" class="searchNews-btn">Find <i class="fa fa-search" aria-hidden="true"></i></button>
+		</div>
+	</section>
 	<section>
 		<div id="news" ng-controller="NewsListCtrl">
 			<div ng-repeat="newsItem in newsList" class="newsItem">

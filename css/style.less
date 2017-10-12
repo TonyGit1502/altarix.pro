@@ -2,14 +2,14 @@
 @black: #000;
 @white: #fff;
 @news-bg: #f5f5f5;
-@header-bg: #01579b;
+@header-bg: #252831;
 @orange: #fc6744;
 @base-text: #6e6e6e;
 @green: #00a65a;
 @red: #dd4b39;
 @yellow: #f39c12;
 @aqua: #00c0ef;
-
+@base-blue: #1997c7;
 //////////////////////// 		basic settings   	////////////////////
 body{
 	overflow-x: hidden;	
@@ -49,11 +49,61 @@ header{
 				}
 			}
 		}
-	} 
-	
+	}
 }
 
 ///////////////////////			section  		///////////////////////////
+#search{
+	justify-content: center;
+	background-color: @orange;
+	.searchNews{
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		margin: 1% 1% 1% 0;
+		input{
+			width: 25%;
+			height: 40px;
+			padding: 10px;
+			padding-left: 15px;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			border-color: @header-bg;
+			color: @header-bg;
+			&:focus, &:visited{
+				outline: none;
+			}
+			//&:focus{
+			//	-webkit-box-shadow: 0 0 80px 25px @base-blue;
+			//	-moz-box-shadow: 0 0 80px 25px @base-blue;
+			//	box-shadow: 0 0 80px 25px @base-blue;
+			//}
+		}
+		button{
+			border: none;
+			background-color: @header-bg;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			color: @white;
+			width: 10%;
+			font-weight: bold;
+			-webkit-transition: all .5s ease;
+			-moz-transition: all .5s ease;
+			-ms-transition: all .5s ease;
+			-o-transition: all .5s ease;
+			transition: all .5s ease;
+			&:hover{
+				background-color: @white;
+				color: @header-bg;
+			}
+			&:focus, &:visited{
+				outline: none;
+			}
+		}
+	}
+}
 #news{
 	width: 50%;
 	background-color: @green;

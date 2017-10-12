@@ -1,0 +1,13 @@
+{
+  "name": "altarix_pro",
+  "version": "0.0.1",
+  "description": "Test project",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyGit1502/altarix.pro"
+  },
+  "dependencies": {
+    
+  }
+}
