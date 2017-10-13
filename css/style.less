@@ -30,22 +30,27 @@ header{
 		width: 100%;
 		margin: 0;
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
-	}
-	.weather{
-		display: flex;
-		padding-top: 15px;
-		ul{
-			padding-left: 0;
-			margin-bottom: 0;
-			list-style: none;
-			display: inline-flex;
+		.page-title{
 			align-items: center;
-			li{
-				font-size: 18px;
-				margin: auto 5px;
-				span{
-					color: @orange;
+			justify-content: center;
+		}
+		.weather{
+			display: flex;
+			padding-top: 15px;
+			ul{
+				padding-left: 0;
+				margin-bottom: 0;
+				list-style: none;
+				display: inline-flex;
+				align-items: center;
+				li{
+					font-size: 18px;
+					margin: auto 5px;
+					span{
+						color: @orange;
+					}
 				}
 			}
 		}

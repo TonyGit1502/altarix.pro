@@ -15,24 +15,29 @@ header .container {
   width: 100%;
   margin: 0;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
-header .weather {
+header .container .page-title {
+  align-items: center;
+  justify-content: center;
+}
+header .container .weather {
   display: flex;
   padding-top: 15px;
 }
-header .weather ul {
+header .container .weather ul {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
   display: inline-flex;
   align-items: center;
 }
-header .weather ul li {
+header .container .weather ul li {
   font-size: 18px;
   margin: auto 5px;
 }
-header .weather ul li span {
+header .container .weather ul li span {
   color: #fc6744;
 }
 #main {
