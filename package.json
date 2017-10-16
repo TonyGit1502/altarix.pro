@@ -8,13 +8,14 @@
     "url": "git+https://github.com/TonyGit1502/altarix.pro"
   },
   "dependencies": {
-    "debounce": "^1.0.2"
+    "angular": "^1.5",
+    "babel-plugin-add-module-exports": "^0.2.1"
   },
   "devDependencies": {
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1"
   },
   "scripts": {
-    "watch:dev": "webpack-dev-server webpack.config.js"
+    "webpack:start": "webpack-dev-server webpack.config.js --content-base app/"
   }
 }
